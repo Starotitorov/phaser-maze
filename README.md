@@ -1,3 +1,15 @@
+This template is a modified version of this repository: https://github.com/belohlavek/phaser-es6-boilerplate
+
+It has been modified to include the following states:
+
+* Boot
+* Preload
+* GameTitle
+* Main
+* GameOver
+
+and is set up to auto resize to cover the entire available viewport. Original documentation below:
+
 # Phaser ES6 Boilerplate
 
 This is a non-professional Phaser template for building standard games using the 
