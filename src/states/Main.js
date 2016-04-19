@@ -14,6 +14,10 @@ class Main extends Phaser.State {
 		//let exampleObject = new ExampleObject(this.game);
 	}
 
+	update() {
+		
+	}
+
 }
 
 export default Main;
