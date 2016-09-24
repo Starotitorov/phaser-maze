@@ -8,7 +8,9 @@ It has been modified to include the following states:
 * Main
 * GameOver
 
-and is set up to auto resize to cover the entire available viewport. Original documentation below:
+and is set up to auto resize to cover the entire available viewport. It also includes a service worker and manifest file for progressive web app support.
+
+Original documentation below:
 
 # Phaser ES6 Boilerplate
 
