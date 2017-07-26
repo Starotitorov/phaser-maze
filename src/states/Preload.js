@@ -1,15 +1,13 @@
 class Preload extends Phaser.State {
 
 	preload() {
-		/* Preload required assets */
-		//this.game.load.image('myImage', 'assets/my-image.png');
-		//this.game.load.audio('myAudio', 'assets/my-audio.wav');
-		//this.game.load.atlas('myAtlas', 'assets/my-atlas.png', 'assets/my-atlas.json');
+        this.load.tilemap('map', 'assets/maze.json', null, Phaser.Tilemap.TILED_JSON);
+        this.load.image('tiles', 'assets/tiles.png');
+        this.load.spritesheet('player', 'assets/player.png', 32, 32);
 	}
 
 	create() {
-		//NOTE: Change to GameTitle if required
-		this.game.state.start("Main");
+		this.game.state.start('Main');
 	}
 
 }

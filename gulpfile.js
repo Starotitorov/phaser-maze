@@ -15,7 +15,7 @@ var browserSync = require('browser-sync');
 /**
  * Using different folders/file names? Change these constants:
  */
-var PHASER_PATH = './node_modules/phaser/build/';
+var PHASER_PATH = './static/scripts/';
 var BUILD_PATH = './build';
 var SCRIPTS_PATH = BUILD_PATH + '/scripts';
 var SOURCE_PATH = './src';
@@ -73,18 +73,7 @@ function copyStatic() {
  * This way you can call 'npm update', get the lastest Phaser version and use it on your project with ease.
  */
 function copyPhaser() {
-
-    var srcList = ['phaser.min.js'];
-    
-    if (!isProduction()) {
-        srcList.push('phaser.map', 'phaser.js');
-    }
-    
-    srcList = srcList.map(function(file) {
-        return PHASER_PATH + file;
-    });
-        
-    return gulp.src(srcList)
+    return gulp.src(PHASER_PATH + 'phaser.min.js')
         .pipe(gulp.dest(SCRIPTS_PATH));
 
 }

@@ -1,23 +1,26 @@
-import ExampleObject from 'objects/ExampleObject';
+import PlayerFactory from '../factories/PlayerFactory';
 
 class Main extends Phaser.State {
+    create() {
+        this.physics.startSystem(Phaser.Physics.ARCADE);
 
-	create() {
+        this.map = this.add.tilemap('map');
+        this.map.addTilesetImage('tiles', 'tiles');
 
-		//Enable Arcade Physics
-		this.game.physics.startSystem(Phaser.Physics.ARCADE);
+        this.layer = this.map.createLayer('layer');
 
-		//Set the games background colour
-		this.game.stage.backgroundColor = '#cecece';
+        this.map.setCollision(10, true, this.layer);
+        
+        this.player = new PlayerFactory(this.game).getPlayer();
 
-		//Example of including an object
-		//let exampleObject = new ExampleObject(this.game);
+        this.game.stage.addChild(this.player);
 	}
 
 	update() {
-		
-	}
+        this.physics.arcade.collide(this.player, this.layer);
 
+        this.player.update();
+    }
 }
 
 export default Main;
