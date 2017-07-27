@@ -26,5 +26,8 @@
     "gulp-util": "^3.0.6",
     "vinyl-source-stream": "^1.1.0",
     "yargs": "^3.16.1"
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
   }
 }

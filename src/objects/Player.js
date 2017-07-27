@@ -1,5 +1,3 @@
-const PLAYER_SPEED = 150;
-
 export default class Player extends Phaser.Sprite {
     constructor({ game, x, y, asset, frame, speed, animations }) {
         super(game, x, y, asset, frame);
@@ -10,14 +8,18 @@ export default class Player extends Phaser.Sprite {
 
         this.game.physics.arcade.enable(this);
 
+        this.body.collideWorldBounds = true;
+
         this.animations.add('down', animations.down, 10, true);
         this.animations.add('left', animations.left, 10, true);
         this.animations.add('right', animations.right, 10, true);
         this.animations.add('up', animations.up, 10, true);
 
-        this.cursors = this.game.input.keyboard.createCursorKeys();
-
         this.speed = speed;
+
+        this.frame = frame;
+
+        this.cursors = this.game.input.keyboard.createCursorKeys();
     }
 
     update() {

@@ -73,14 +73,13 @@ function copyStatic() {
  * This way you can call 'npm update', get the lastest Phaser version and use it on your project with ease.
  */
 function copyPhaser() {
-    return gulp.src(PHASER_PATH + 'phaser.min.js')
+    return gulp.src(PHASER_PATH + 'phaser.js')
         .pipe(gulp.dest(SCRIPTS_PATH));
-
 }
 
 /**
  * Transforms ES2015 code into ES5 code.
- * Optionally: Creates a sourcemap file 'game.js.map' for debugging.
+ * Optionally: Creates a sourcemap file 'game.js.maps' for debugging.
  * 
  * In order to avoid copying Phaser and Static files on each build,
  * I've abstracted the build logic into a separate function. This way
