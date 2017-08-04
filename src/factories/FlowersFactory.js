@@ -15,9 +15,9 @@ export default class FlowersFactory {
 
         flowers.add(this._createFlower(1.5 * tileWidth, gameHeight - 1.5 * tileHeight));
         flowers.add(this._createFlower(8.5 * tileWidth, 1.5 * tileHeight));
-        flowers.add(this._createFlower(gameWidth - 5.5 * tileWidth, 5.5 * tileHeight));
+        flowers.add(this._createFlower(gameWidth - 6.5 * tileWidth, 5.5 * tileHeight));
         flowers.add(this._createFlower(3.5 * tileWidth, gameHeight - 7.5 * tileHeight));
-        flowers.add(this._createFlower(gameWidth - 3.5 * tileWidth, gameHeight - 3.5 * tileHeight));
+        flowers.add(this._createFlower(gameWidth - 3.5 * tileWidth, gameHeight - 5.5 * tileHeight));
         flowers.add(this._createFlower(gameWidth - 2.5 * tileWidth, 4.5 * tileHeight));
 
         return flowers;

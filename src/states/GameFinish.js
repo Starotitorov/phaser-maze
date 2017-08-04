@@ -1,9 +1,10 @@
 import TextButton from '../components/TextButton';
 
 export default class GameFinish extends Phaser.State {
-    init({ collected, total }) {
+    init({ collected, total, result }) {
         this.collectedCount = collected;
         this.totalCount = total;
+        this.result = result;
     }
 
     create() {
@@ -15,7 +16,7 @@ export default class GameFinish extends Phaser.State {
             this.game,
             this.game.world.centerX,
             this.game.world.centerY - 200,
-            'Congratulations!',
+            this.result,
             {
                 font: '36px Tahoma',
                 fill: 'white',
