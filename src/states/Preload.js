@@ -8,6 +8,7 @@ class Preload extends Phaser.State {
         this.load.spritesheet('cannon', 'assets/cannon.png', 48, 32);
         this.load.spritesheet('bullet', 'assets/bullet.png', 28, 18);
         this.load.spritesheet('flame', 'assets/flame.png', 27, 32);
+        this.load.spritesheet('bam', 'assets/bam.png', 54, 54);
         this.load.atlasJSONArray('button', 'assets/button.png', 'assets/button.json');
         this.load.image('background', 'assets/background.jpg');
 	}

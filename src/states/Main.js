@@ -24,6 +24,10 @@ class Main extends Phaser.State {
         this.finishTile.alpha = 0;
         this.game.physics.arcade.enable(this.finishTile);
 
+        this.bam = this.add.sprite(0, 0, 'bam');
+        this.bam.anchor.set(0.5);
+        this.bam.visible = false;
+
         this.map.setCollision(71, true, this.layer);
 
         const playerFactory = new PlayerFactory(this.game);
@@ -70,6 +74,11 @@ class Main extends Phaser.State {
     }
 
     _crashPlayer(player, bullet) {
+        this.bam.reset(bullet.left, bullet.y);
+        this.bam.alpha = 1;
+        this.bam.visible = true;
+        this.add.tween(this.bam).to( { alpha: 0 }, 3000, "Linear", true);
+
         this.player.destroy();
         bullet.kill();
 
