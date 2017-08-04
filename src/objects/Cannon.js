@@ -13,7 +13,7 @@ export default class Flower extends Phaser.Sprite {
 
         this.shootTime = 0;
         this.shootInterval = shootInterval;
-        this.turretCenter = this.y - 2;
+        this.turretCenter = this.y - 3;
 
         this.bullets = this.game.add.group();
 
